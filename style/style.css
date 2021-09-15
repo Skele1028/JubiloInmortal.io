@@ -3,7 +3,7 @@ body{
 }
 
 #webcam-app {
-    background-image: url(../images/Logo+marco.png);
+    background-image: url(../images/Fondo.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -25,7 +25,7 @@ body{
 }
 
 .o-back{
-    background-image: url(../images/Fondo.png);
+    background-image: url(../images/Logo+marco.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
