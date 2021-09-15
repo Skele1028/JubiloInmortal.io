@@ -238,9 +238,10 @@ input[type="checkbox"] {
     z-index: 99999;
     background: transparent;
 }
+
 #montaje{
     object-fit: contain;
-    transform: scale(4);
+    /* transform: scale(4); */
   
     left: 12%;
 }
