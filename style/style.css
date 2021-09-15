@@ -241,8 +241,8 @@ input[type="checkbox"] {
 
 #montaje{
     object-fit: contain;
-    transform: scale(2); 
-  
+    transform: scale(3); 
+    top: 20%;
     right: 12%;
 }
 
