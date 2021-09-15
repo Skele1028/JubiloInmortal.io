@@ -219,7 +219,13 @@ input[type="checkbox"] {
   }
 
   /* logos */
-  
+#images-container{
+    position: absolute;
+    bottom: 10vh;
+    width: 100%;
+    z-index: 99999;
+    background: transparent;
+}
 #montaje{
     object-fit: contain;
     
