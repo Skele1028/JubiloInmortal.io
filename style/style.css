@@ -19,16 +19,16 @@ body{
     height: 50%; */
     width: 50em;
     height: 25em;
-    background-image: url('../Images/Logo+marco.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
     display: flex;
     justify-content: right;
     align-items: center;
 }
 
 .o-back{
+    background-image: url('../Images/Logo+marco.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     border:none !important;
     background-color:transparent !important;
 }
