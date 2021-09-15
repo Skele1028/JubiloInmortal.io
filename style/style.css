@@ -221,16 +221,15 @@ input[type="checkbox"] {
   /* logos */
 #images-container{
     position: absolute;
-    bottom: 10vh;
+    bottom: 20vh;
     width: 100%;
     z-index: 99999;
     background: transparent;
 }
 #montaje{
     object-fit: contain;
-    
     transform: scale(4);
-    bottom: 20%;
+  
     left: 12%;
 }
 
@@ -239,7 +238,7 @@ input[type="checkbox"] {
     width: 20%;
     object-fit: contain;
     z-index: 1000;
-    bottom: .5rem;
+    
     left: 1rem;
 }
 
