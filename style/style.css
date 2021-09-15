@@ -26,7 +26,7 @@ body{
     align-items: center;
 }
 
-#button-start-cam{
+.button-start-cam{
     width: 9em;
     height: 4em;
     position: relative;
@@ -40,16 +40,16 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
 }
 
 /*Efecto mientras se hace clic en el elemento*/
-#button-start-cam:active{
+.button-start-cam:active{
     top: 2px;
 }
 
-#button-start-cam:hover{
+.button-start-cam:hover{
     color: rgba(255, 255, 255, 1) !important;
     box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
     transition: all 0.2s ease;
