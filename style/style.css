@@ -15,8 +15,10 @@ body{
   }
   
 #webcam-control{
-    width: 60%;
-    height: 50%;
+    /* width: 60%;
+    height: 50%; */
+    width: 50em;
+    height: 25em;
     background-image: url('../Images/Logo+marco.png');
     background-position: center center;
     background-repeat: no-repeat;
@@ -24,6 +26,11 @@ body{
     display: flex;
     justify-content: right;
     align-items: center;
+}
+
+.o-back{
+    border:none !important;
+    background-color:transparent !important;
 }
 
 #button-start-cam{
@@ -55,11 +62,6 @@ body{
     transition: all 0.2s ease;
 }
 
-/*input[type="checkbox"] {
-	display: none;
-} */
-
-	
 input[type="checkbox"] {
 	display: none;
 }
