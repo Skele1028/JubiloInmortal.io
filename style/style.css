@@ -26,7 +26,7 @@ body{
 
 .o-back{
     background-image: url(../images/Logo+marco.png);
-    background-color: violet;
+    background-color: transparent;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -34,8 +34,8 @@ body{
 }
 
 #button-start-cam{
-    width: 9em;
-    height: 4em;
+    width: 9wh;
+    height: 8hv;
     position: relative;
     right: 15%;
     border: none;
@@ -84,8 +84,7 @@ input[type="checkbox"] {
    }
 }
 
-/*  */
-
+/*con la cam*/
 .app-panel{
     height: 100vh;
     width: 100vw;
@@ -218,3 +217,31 @@ input[type="checkbox"] {
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* logos */
+  
+#montaje{
+    object-fit: contain;
+    
+    transform: scale(4);
+    bottom: 20%;
+    left: 12%;
+}
+
+#logo0{
+    position: absolute;
+    width: 20%;
+    object-fit: contain;
+    z-index: 1000;
+    bottom: .5rem;
+    left: 1rem;
+}
+
+#logo{
+    position: absolute;
+    width: 20%;
+    object-fit: contain;
+    z-index: 1000;
+    bottom: .5rem;
+    right: 1rem;
+}
