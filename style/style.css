@@ -306,9 +306,27 @@ input[type="checkbox"] {
       background-image: url(../images//camera_flip_white.png);
       background-size: cover;
   }
+
+/*Tempo para la cam*/
+#timer{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    align-self: center;
+    color: white;
+    text-shadow: 4px 4px 2px black;
+    font-size: 10rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    pointer-events: none;
+}
 /* Probando */
 
-.form-control.webcam-on {
+/* .form-control.webcam-on {
     position: fixed;
     top: 10vh;
     bottom: auto;
@@ -319,9 +337,9 @@ input[type="checkbox"] {
   }
   .form-control.webcam-off {
       transition: all 100ms;
-  }
+  } */
 
-  .form-switch {
+  /* .form-switch {
     display: inline-block;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -384,4 +402,4 @@ input[type="checkbox"] {
 
   .form-switch input:disabled + i::after {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.10);
-  }
+  } */
