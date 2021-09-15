@@ -25,12 +25,11 @@ body{
 }
 
 .o-back{
-    background-image: url('../images/Logo+marco.png');
+    background-image: url(../images/Logo+marco.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border:none !important;
-    background-color:transparent !important;
 }
 
 #button-start-cam{
