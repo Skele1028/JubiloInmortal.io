@@ -17,8 +17,8 @@ body{
 #webcam-control{
     /* width: 60%;
     height: 50%; */
-    width: 50em;
-    height: 25em;
+    width: 45vw;
+    height: 40vh;
     display: flex;
     justify-content: right;
     align-items: center;
@@ -26,6 +26,7 @@ body{
 
 .o-back{
     background-image: url(../images/Logo+marco.png);
+    background-color: violet;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
