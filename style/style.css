@@ -55,11 +55,9 @@ body{
     transition: all 0.2s ease;
 }
 
-
-
-input[type="checkbox"] {
+/*input[type="checkbox"] {
 	display: none;
-}
+} */
 
 	
 input[type="checkbox"] {
