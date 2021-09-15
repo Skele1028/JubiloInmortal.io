@@ -251,7 +251,7 @@ input[type="checkbox"] {
     width: 20%;
     object-fit: contain;
     z-index: 1000;
-    
+    bottom: .5rem;
     left: 1rem;
 }
 
