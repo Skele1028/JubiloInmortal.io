@@ -1,11 +1,12 @@
 body{
     font-family: 'Roboto Condensed', sans-serif;
 }
+
 #webcam-app {
+    background-image: url(../images/Fondo.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: white;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -38,19 +39,20 @@ body{
     background-position: center left;
     background-repeat: no-repeat;
     background-size: contain;
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
 /*Efecto mientras se hace clic en el elemento*/
 #button-start-cam:active{
     top: 2px;
- 
 }
 
 #button-start-cam:hover{
     color: rgba(255, 255, 255, 1) !important;
     box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
     transition: all 0.2s ease;
-  
 }
 
 #errorMsg {

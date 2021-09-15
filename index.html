@@ -18,15 +18,16 @@
 <body>
     <main id="webcam-app">
         <div class="webcam-start" id="webcam-control">
-<!--         <div class="form-control webcam-start" id="webcam-control"> -->
-
-            <button id="button-start-cam" type="button" class="btn-start">Iniciar</button>
-                 <label class="form-switch">
-                    <input type="checkbox" id="webcam-switch">
-                    <i></i> 
-                    <span id="webcam-caption">Click to Start Camera</span>
-                </label>     
+         <!-- <div class="form-control webcam-start" id="webcam-control">  -->
+         <!--    <button id="button-start-cam" type="button" class="btn-start"> -->
+                <label class="form-switch" id="button-start-cam">
+                   <!-- <input type="checkbox" id="webcam-switch">
+                   <i></i>  -->
+                   <span id="webcam-caption">Iniciar</span>
+               </label>     
+          <!--   </button> -->
                 <button id="cameraFlip" class="btn d-none"></button>   
+            </div>
         </div>
         <div id="errorMsg" class="col-12 col-md-6 alert-danger d-none">
             Fallo en el inicio de la cámara, por favor conceda el permiso para acceder a la cámara. 

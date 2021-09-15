@@ -31,9 +31,9 @@ $('#cameraFlip').click(function() {
 });
 
 
-/* $('#closeError').click(function() {
+$('#closeError').click(function() {
     $("#webcam-switch").prop('checked', false).change();
-}); */
+}); 
 
 function displayError(err = ''){
     if(err!=''){
