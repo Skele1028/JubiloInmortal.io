@@ -1,0 +1,207 @@
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+#webcam-app {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+#webcam-control{
+    width: 60%;
+    height: 50%;
+    background-image: url('../Images/Logo+marco.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#button-start-cam{
+    width: 9em;
+    height: 4em;
+    position: relative;
+    right: 15%;
+    border: none;
+    border-radius: 50px 50px 80px 80px;
+    color: white;
+    background-color: #149a9d;
+   /*  background-image: url('../Images/Button1.png'); */
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/*Efecto mientras se hace clic en el elemento*/
+#button-start-cam:active{
+    top: 2px;
+ 
+}
+
+#button-start-cam:hover{
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+    transition: all 0.2s ease;
+  
+}
+
+#errorMsg {
+    position: fixed;
+    top: 22vh;
+    left: 0;
+    padding: 20px;
+    z-index: 999999;
+}
+
+@media screen and (min-width: 768px) {
+   #errorMsg {
+       position: fixed;
+       top: 32vh;
+       left: 20vw;
+       padding: 20px;
+       z-index: 999999;
+   }
+}
+
+/*  */
+
+.app-panel{
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    background-color: black;
+  }
+
+  #webcam{
+    display: block;
+    position: relative;
+    width: auto;
+    height: 100vh;
+    z-index: 999;
+    pointer-events: none;
+    margin: auto;
+  }
+
+  
+  .md-modal {
+    margin: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 2000;
+      visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+  }
+  
+  .md-show {
+      visibility: visible;
+  }
+  
+  .md-overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      opacity: 0;
+      background: rgba(#e4f0e3, 0.8);
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+  }
+  
+  .md-show ~ .md-overlay {
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  .md-effect-12 .md-content {
+      -webkit-transform: scale(0.8);
+      -moz-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      transform: scale(0.8);
+      opacity: 0;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+  }
+  
+  .md-show.md-effect-12 ~ .md-overlay {
+      background-color: #e4f0e3;
+  } 
+  
+  .md-effect-12 .md-content h3,
+  .md-effect-12 .md-content {
+      background: transparent;
+  }
+  
+  .md-show.md-effect-12 .md-content {
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+  }
+
+  
+.cameraControls {
+    position: absolute;
+    bottom: 10vh;
+    width: 100%;
+    z-index: 99999;
+    background: transparent;
+    opacity: 0.7;
+    padding: 10px;
+  }
+  
+  
+  .material-icons{
+    width: 100px;
+    font-size: 50px !important;
+    color: white;
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    border-radius: 50%;
+    padding-top: 15px;
+    margin: 0 10px;
+  }
+  
+  .flash{ 
+    position:fixed; 
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:#fff;
+    z-index: 999999;
+  }
+  
+  #canvas{
+    background-color: transparent;
+    position: absolute;
+    width: auto;
+    height: 100vh;
+    z-index: 9999;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
