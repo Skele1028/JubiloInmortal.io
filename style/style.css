@@ -292,7 +292,7 @@ input[type="checkbox"] {
     align-items: center;
 }
 
-
+/*Indicacion de giro del celular */
 #warning{
     text-align: center; 
     display: flex; 
@@ -338,11 +338,10 @@ input[type="checkbox"] {
     pointer-events: none;
 }
 
-/*para la ventana de advertencia */
-
+/*Indicacion de giro del celular */
 @media screen and (orientation:landscape) {
     #webcam-app{
-        display: block;
+        display: flex;
     }
     #warning{
         display: none;

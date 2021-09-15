@@ -48,6 +48,7 @@ function cameraStarted(){
     $("#button-start-cam").html("on");
     $("#webcam-control").removeClass("webcam-off");
     $("#webcam-control").addClass("webcam-on");
+    $("#webcam-control").removeClass("d-none");
     $(".webcam-container").removeClass("d-none");
     if( webcam.webcamList.length > 1){
         $("#cameraFlip").removeClass('d-none');
