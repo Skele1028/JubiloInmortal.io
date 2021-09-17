@@ -8,8 +8,7 @@ const webcam = new Webcam(webcamElement, 'user', canvasElement);
 
 $("#webcam-switch").change(function () {
     if(this.checked){
-        $('.modal-containerl').addClass('md-show');
-/*         $('.md-modal').addClass('md-show'); */
+        $('.md-modal').addClass('md-show');
        
         webcam.start()
             .then(result =>{
