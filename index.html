@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type='text/css' media='screen' href="style/style.css">
     <link rel="stylesheet" type='text/css' media='screen' href="style/animation.css">
+    <link rel="stylesheet" type='text/css' media='screen' href="style/modalStyle.scss">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>  
@@ -38,13 +39,14 @@
             Fallo en el inicio de la cámara, por favor conceda el permiso para acceder a la cámara. 
             <button id="closeError" class="btn btn-primary ml-3">OK</button>
         </div>
-        <div class="md-modal md-effect-12">
+        <div id="modal-container" class=" o-modalcont">
+<!--         <div class="md-modal md-effect-12 o-modalcont"> -->
             <div id="app-panel" class="app-panel md-content row p-0 m-0">     
                 <div id="webcam-container" class="webcam-container col-12 d-none p-0 m-0">
                     <!-- <p id="instructions">Amplia, reduce o mueve la mariposa haciendo touch sobre la imágen</p> -->
                     <video id="webcam" autoplay playsinline width="1280" height="7200"></video>
                     
-                    <!-- Revisar esta parte -->
+                    <!-- Revisar esta    parte -->
                     <div id="images-container" class="o-video" style="overflow: hidden; ">
                         <div id="gesture-area" style="width: 100%; height: 100%;">
                             <img id="montaje" class="resize-drag" src="images/MariposaPh.gif" >
