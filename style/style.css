@@ -239,16 +239,17 @@ input[type="checkbox"] {
 
 #cameraFlip {
     width: 70px;
-      height: 55px;
-      margin-left: 40px;
-      margin-top: -10px;
-      position: absolute;
-      cursor: pointer;
-      background-color: black;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-image: url(../images//camera_flip_white.png);
-      background-size: cover;
+    height: 55px;
+    margin-left: 40px;
+    margin-top: -10px;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: black;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../images//camera_flip_white.png);
+    background-size: cover;
   }
 
 /*Tempo para la cam*/
