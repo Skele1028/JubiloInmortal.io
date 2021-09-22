@@ -1,14 +1,15 @@
 //Inicializacion del obj webCam
 const webcamElement = document.getElementById('webcam');
 const canvasElement = document.getElementById('canvas');
-const imagesElement = document.getElementById('images-container');
 
-const webcam = new Webcam(webcamElement, 'user', canvasElement, imagesElement);
+const webcam = new Webcam(webcamElement, 'user', canvasElement);
+
 
 
 $("#webcam-switch").change(function () {
     if(this.checked){
         $('.md-modal').addClass('md-show');
+       
         webcam.start()
             .then(result =>{
                cameraStarted();
@@ -23,16 +24,17 @@ $("#webcam-switch").change(function () {
         webcam.stop();
         console.log("webcam stopped");
     }        
-});
+}); 
 
 $('#cameraFlip').click(function() {
     webcam.flip();
     webcam.start();  
 });
 
+
 $('#closeError').click(function() {
     $("#webcam-switch").prop('checked', false).change();
-});
+}); 
 
 function displayError(err = ''){
     if(err!=''){
@@ -44,9 +46,11 @@ function displayError(err = ''){
 function cameraStarted(){
     $("#errorMsg").addClass("d-none");
     $('.flash').hide();
-    $("#webcam-caption").html("on");
+    $("#button-start-cam").html("on");
     $("#webcam-control").removeClass("webcam-off");
     $("#webcam-control").addClass("webcam-on");
+    $("#webcam-control").removeClass("button-start-cam");
+    $("#webcam-control").removeClass("d-none");
     $(".webcam-container").removeClass("d-none");
     if( webcam.webcamList.length > 1){
         $("#cameraFlip").removeClass('d-none');
@@ -56,16 +60,16 @@ function cameraStarted(){
     $('body').css('overflow-y','hidden');
 }
 
-function cameraStopped(){
+/* function cameraStopped(){
     $("#errorMsg").addClass("d-none");
     $("#wpfront-scroll-top-container").removeClass("d-none");
     $("#webcam-control").removeClass("webcam-on");
     $("#webcam-control").addClass("webcam-off");
     $("#cameraFlip").addClass('d-none');
     $(".webcam-container").addClass("d-none");
-    $("#webcam-caption").html("Click to Start Camera");
+    $("#button-start-cam").html("Click to Start Camera");
     $('.md-modal').removeClass('md-show');
-}
+} */
 
 
 $("#take-photo").click(function () {
