@@ -6,11 +6,9 @@ const imagesElement = document.getElementById('images-container');
 const webcam = new Webcam(webcamElement, 'user', canvasElement, imagesElement);
 
 
-
 $("#webcam-switch").change(function () {
     if(this.checked){
         $('.md-modal').addClass('md-show');
-       
         webcam.start()
             .then(result =>{
                cameraStarted();
@@ -25,17 +23,16 @@ $("#webcam-switch").change(function () {
         webcam.stop();
         console.log("webcam stopped");
     }        
-}); 
+});
 
 $('#cameraFlip').click(function() {
     webcam.flip();
     webcam.start();  
 });
 
-
 $('#closeError').click(function() {
     $("#webcam-switch").prop('checked', false).change();
-}); 
+});
 
 function displayError(err = ''){
     if(err!=''){
@@ -66,9 +63,9 @@ function cameraStopped(){
     $("#webcam-control").addClass("webcam-off");
     $("#cameraFlip").addClass('d-none');
     $(".webcam-container").addClass("d-none");
-    $("#button-start-cam").html("Click to Start Camera");
+    $("#webcam-caption").html("Click to Start Camera");
     $('.md-modal').removeClass('md-show');
-} 
+}
 
 
 $("#take-photo").click(function () {
@@ -97,8 +94,6 @@ function afterTakePhoto(){
     $('#download-photo').removeClass('d-none');
     $('#resume-camera').removeClass('d-none');
     $('#cameraControls').removeClass('d-none');
-    $('#cameraFlip').removeClass('d-none');
-  
 }
 
 function removeCapture(){
