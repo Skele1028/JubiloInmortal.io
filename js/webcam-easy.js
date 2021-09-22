@@ -180,6 +180,7 @@ class Webcam {
         if(this._facingMode == 'user'){
           context.translate(this._canvasElement.width, 0);
           context.scale(-1, 1);
+          context.width = "1080px";
        /** */   contextI.translate(this._imagesElement.width, 0);
           contextI.scale(-1, 1);
         }
