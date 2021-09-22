@@ -1,8 +1,9 @@
 //Inicializacion del obj webCam
 const webcamElement = document.getElementById('webcam');
 const canvasElement = document.getElementById('canvas');
+const imagesElement = document.getElementById('images-container');
 
-const webcam = new Webcam(webcamElement, 'user', canvasElement);
+const webcam = new Webcam(webcamElement, 'user', canvasElement, imagesElement);
 
 
 
@@ -49,8 +50,7 @@ function cameraStarted(){
     $("#button-start-cam").html("on");
     $("#webcam-control").removeClass("webcam-off");
     $("#webcam-control").addClass("webcam-on");
-    $("#webcam-control").addClass("d-none");
-  /*   $("#webcam-control").removeClass("d-none"); */
+    $("#webcam-control").removeClass("d-none");
     $(".webcam-container").removeClass("d-none");
     if( webcam.webcamList.length > 1){
         $("#cameraFlip").removeClass('d-none');
