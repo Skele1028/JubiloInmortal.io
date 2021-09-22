@@ -1,8 +1,8 @@
 class Webcam {
     constructor(webcamElement, facingMode = 'user', canvasElement = null, imagesElement = null) {
       this._webcamElement = webcamElement;
-      this._webcamElement.width = this._webcamElement.width || 640;
-      this._webcamElement.height = this._webcamElement.height || video.width * (3 / 4);
+      this._webcamElement.width = this._webcamElement.width || 1280;
+      this._webcamElement.height = this._webcamElement.height || video.width * (2 / 4);
       this._facingMode = facingMode;
       this._webcamList = [];
       this._streamList = [];
@@ -140,9 +140,9 @@ class Webcam {
           .then(stream => {
               this._streamList.push(stream);
               this._webcamElement.srcObject = stream;
-              if(this._facingMode == 'user'){
+             /*  if(this._facingMode == 'user'){
                 this._webcamElement.style.transform = "scale(-1,1)";
-              }
+              } */
               this._webcamElement.play();
               resolve(this._facingMode);
           })
@@ -165,17 +165,28 @@ class Webcam {
     snap() {
       if(this._canvasElement!=null){
         /* if(this._snapSoundElement!= null){
-          this._snapSoundElement.play();
-        } */
+          this._snapSoundElement.play(); }*/
+        
+
         this._canvasElement.height = this._webcamElement.scrollHeight;
         this._canvasElement.width = this._webcamElement.scrollWidth;
+     /** */
+        this._imagesElement.height = this._imagesElement.scrollHeight;
+        this._imagesElement.width = this._imagesElement.width;
+
         let context = this._canvasElement.getContext('2d');
+      /** */  let contextI = this._imagesElement.getContext('2d');
+        
         if(this._facingMode == 'user'){
           context.translate(this._canvasElement.width, 0);
           context.scale(-1, 1);
+       /** */   contextI.translate(this._imagesElement.width, 0);
+          contextI.scale(-1, 1);
         }
         context.clearRect(0, 0, this._canvasElement.width, this._canvasElement.height);
-        context.drawImage(this._webcamElement, 0, 0, this._canvasElement.width, this._canvasElement.height);
+       /**/ context.drawImage(this._webcamElement, 0, 0, this._canvasElement.width, this._canvasElement.height, this._imagesElement.width, this._imagesElement.height);
+        
+        
         let data = this._canvasElement.toDataURL('image/png');
         return data;
       }
