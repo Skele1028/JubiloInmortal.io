@@ -80,11 +80,13 @@ input[type="checkbox"] {
 }
 
 #errorMsg {
-    position: fixed;
-    top: 22vh;
-    left: 0;
+    top: 25%;
+    left: 25%;
     padding: 20px;
     z-index: 999999;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 @media screen and (min-width: 768px) {
