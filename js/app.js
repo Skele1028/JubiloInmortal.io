@@ -49,8 +49,8 @@ function cameraStarted(){
     $("#button-start-cam").html("on");
     $("#webcam-control").removeClass("webcam-off");
     $("#webcam-control").addClass("webcam-on");
-    $("#webcam-control").removeClass("button-start-cam");
-    $("#webcam-control").removeClass("d-none");
+    $("#webcam-control").addClass("d-none");
+  /*   $("#webcam-control").removeClass("d-none"); */
     $(".webcam-container").removeClass("d-none");
     if( webcam.webcamList.length > 1){
         $("#cameraFlip").removeClass('d-none');
@@ -92,9 +92,10 @@ function beforeTakePhoto(){
 
 function afterTakePhoto(){
     webcam.stop();
-    $('#canvas').removeClass('d-none');
+   /*  $('#canvas').removeClass('d-none'); */
     $('#take-photo').addClass('d-none');
     $('#exit-app').removeClass('d-none');
+    $('#cameraFlip').removeClass('d-none');
     $('#download-photo').removeClass('d-none');
     $('#resume-camera').removeClass('d-none');
     $('#cameraControls').removeClass('d-none');

@@ -36,16 +36,16 @@
         </div>
         
         <div id="errorMsg" class="col-12 col-md-6 alert-danger d-none">
-            Fallo en el inicio de la cámara, por favor conceda el permiso para acceder a la cámara. 
+             Fallo en el inicio de la cámara, por favor conceda el permiso para acceder a la cámara. 
             <button id="closeError" class="btn btn-primary">OK</button>
         </div>
         <div class="md-modal md-effect-12 o-modalcont">
             <div id="app-panel" class="app-panel md-content row p-0 m-0">
                 <div id="webcam-container" class="webcam-container col-12 d-none p-0 m-0">
                     <!-- <p id="instructions">Amplia, reduce o mueve la mariposa haciendo touch sobre la imágen</p> -->
-                    <video id="webcam" autoplay playsinline width="1280" height="720">
+                    <video id="webcam" autoplay webkit-playsinline playsinline width="1280" height="720">
                     </video>
-                    <canvas id="canvas" class="d-none" width="1280" height="720" >
+                    <canvas id="canvas" class="d-none" width="1280" height="720" >  </canvas>
                          <!-- Revisar esta    parte -->
                         <div id="images-container" class="o-video" style="overflow: hidden; ">
                             <div id="gesture-area" style="width: 100%; height: 100%;">
@@ -53,12 +53,11 @@
                             </div>
                             <img id="logo0" src="images/LogoJubiloT.png"/>
                             <img id="logo" src="images/LOGOS-02.png"/>
-
                         </div>
-                    </canvas>
+                  
 
                     <!--  -->
-                    <div id="timer" class="fadeIn third"><!-- <div id="timer_count"> --></div>
+                    <!-- <div id="timer" class="fadeIn third"><!-- <div id="timer_count"> --></div> -->
                     <div id="cameraControls" class="cameraControls">
                         
                         <button id="cameraFlip" class="btn d-none"></button> 
@@ -95,10 +94,6 @@
     
         // this function is used later in the resizing and gesture demos
         window.dragMoveListener = dragMoveListener
-    
-        
-    
-    
         
     
         var angleScale = {
