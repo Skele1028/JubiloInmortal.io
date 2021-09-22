@@ -61,7 +61,7 @@ function cameraStarted(){
     $('body').css('overflow-y','hidden');
 }
 
-/* function cameraStopped(){
+function cameraStopped(){
     $("#errorMsg").addClass("d-none");
     $("#wpfront-scroll-top-container").removeClass("d-none");
     $("#webcam-control").removeClass("webcam-on");
@@ -70,7 +70,7 @@ function cameraStarted(){
     $(".webcam-container").addClass("d-none");
     $("#button-start-cam").html("Click to Start Camera");
     $('.md-modal').removeClass('md-show');
-} */
+} 
 
 
 $("#take-photo").click(function () {
