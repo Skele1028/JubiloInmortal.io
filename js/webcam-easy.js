@@ -1,8 +1,8 @@
 class Webcam {
     constructor(webcamElement, facingMode = 'user', canvasElement = null, imagesElement = null, montaje = null) {
       this._webcamElement = webcamElement;
-      this._webcamElement.width = /* this._webcamElement.width || */ 1280;
-      this._webcamElement.height = /* this._webcamElement.height || video.width * (2 / 4) */ 720;
+      this._webcamElement.width = this._webcamElement.width || 1280;
+      this._webcamElement.height = this._webcamElement.height || video.width * (2 / 4);
       this._facingMode = facingMode;
       this._webcamList = [];
       this._streamList = [];
@@ -168,22 +168,6 @@ class Webcam {
     }
 
     snap() {
-
-  /*     snap.setAttribute("disabled", "disabled");
-      timer.innerHTML = 3;
-
-      var countdown = window.setInterval(function() {
-          var seconds = timer.innerHTML;
-          seconds = seconds - 1;
-          timer.innerHTML = seconds;
-
-          if (seconds == 0) {
-              timer.innerHTML = "¡ Una sonrisa !";
-              
-              clearInterval(countdown);
-              }
-      }, 1000); */
-
       if(this._canvasElement!=null){
         /* if(this._snapSoundElement!= null){
           this._snapSoundElement.play(); }*/
@@ -212,13 +196,25 @@ class Webcam {
           contextI.translate(this._imagesElement.width, 0);
           contextI.scale(-1, 1);
 
-         
+          timer.innerHTML = 3;
 
+        var countdown = window.setInterval(function() {
+            var seconds = timer.innerHTML;
+            seconds = seconds - 1;
+            timer.innerHTML = seconds;
 
+            if (seconds == 0) {
+                timer.innerHTML = "¡ Una sonrisa !";
+                
+                clearInterval(countdown);
+                }
+        }, 1000);
+
+        
         }
         context.clearRect(0, 0, this._canvasElement.width, this._canvasElement.height);
         /**/ 
-        context.drawImage(this._webcamElement, 0, 0, 1280, 720);
+        context.drawImage(this._webcamElement, 0, 0, this._canvasElement.width, this._canvasElement.height);
         
         
         let data = this._canvasElement.toDataURL('image/png');
