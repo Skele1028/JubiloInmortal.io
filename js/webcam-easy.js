@@ -169,7 +169,7 @@ class Webcam {
 
     snap() {
 
-      snap.setAttribute("disabled", "disabled");
+  /*     snap.setAttribute("disabled", "disabled");
       timer.innerHTML = 3;
 
       var countdown = window.setInterval(function() {
@@ -182,7 +182,7 @@ class Webcam {
               
               clearInterval(countdown);
               }
-      }, 1000);
+      }, 1000); */
 
       if(this._canvasElement!=null){
         /* if(this._snapSoundElement!= null){
