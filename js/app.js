@@ -63,7 +63,6 @@ function cameraStarted(){
     window.scrollTo(0, 0); 
     $('body').css('overflow-y','hidden');
 
-    webcam.drawCanva();
 }
 
 function cameraStopped(){
@@ -80,7 +79,9 @@ function cameraStopped(){
 
 $("#take-photo").click(function () {
     beforeTakePhoto();
+    webcam.drawCanva();
     let picture = webcam.snap();
+    
     document.querySelector('#download-photo').href = picture;
     afterTakePhoto();
 });
