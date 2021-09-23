@@ -2,8 +2,9 @@
 const webcamElement = document.getElementById('webcam');
 const canvasElement = document.getElementById('canvas');
 const imagesElement = document.getElementById('images-container');
+const montaje = document.getElementById("montaje");
 
-const webcam = new Webcam(webcamElement, 'user', canvasElement, imagesElement);
+const webcam = new Webcam(webcamElement, 'user', canvasElement, imagesElement, montaje);
 
 
 
@@ -51,8 +52,10 @@ function cameraStarted(){
     $("#webcam-control").removeClass("webcam-off");
     $("#webcam-control").addClass("webcam-on");
     $("#webcam-control").removeClass("button-start-cam");
-    $("#webcam-control").removeClass("d-none");
+ /*    $("#webcam-control").removeClass("d-none"); */
+    $("#webcam-control").addClass("d-none");
     $(".webcam-container").removeClass("d-none");
+
     if( webcam.webcamList.length > 1){
         $("#cameraFlip").removeClass('d-none');
     }

@@ -1,5 +1,5 @@
 class Webcam {
-    constructor(webcamElement, facingMode = 'user', canvasElement = null, imagesElement = null) {
+    constructor(webcamElement, facingMode = 'user', canvasElement = null, imagesElement = null, montaje = null) {
       this._webcamElement = webcamElement;
       this._webcamElement.width = this._webcamElement.width || 1280;
       this._webcamElement.height = this._webcamElement.height || video.width * (2 / 4);
@@ -9,6 +9,7 @@ class Webcam {
       this._selectedDeviceId = '';
       this._canvasElement = canvasElement;
       this._imagesElement = imagesElement;
+      this._montaje = montaje;
       /* 
       this._snapSoundElement = snapSoundElement; */
     }
@@ -49,15 +50,18 @@ class Webcam {
 
     /* Get media constraints */
     getMediaConstraints() {
-        var videoConstraints = {};
+    /*     var videoConstraints = {};
         if (this._selectedDeviceId == '') {
             videoConstraints.facingMode =  this._facingMode;
         } else {
             videoConstraints.deviceId = { exact: this._selectedDeviceId};
-        }
+        } */
         var constraints = {
-            video: videoConstraints,
-            audio: false
+            video: {
+              width: 1280, height: 720,
+              facingMode: (front? "user" : "environment")
+            }
+           /*  videoConstraints, */
         };
         return constraints;
     }
@@ -140,6 +144,7 @@ class Webcam {
           .then(stream => {
               this._streamList.push(stream);
               this._webcamElement.srcObject = stream;
+
              /*  if(this._facingMode == 'user'){
                 this._webcamElement.style.transform = "scale(-1,1)";
               } */
@@ -170,22 +175,46 @@ class Webcam {
 
         this._canvasElement.height = this._webcamElement.scrollHeight;
         this._canvasElement.width = this._webcamElement.scrollWidth;
-     /** */
+        /** */
         this._imagesElement.height = this._imagesElement.scrollHeight;
-        this._imagesElement.width = this._imagesElement.width;
+        this._imagesElement.width = this._imagesElement.scrollwidth;
+
+        /** */
+        const logoJ = document.getElementById("logoJubilo");
+        const logoK = document.getElementById("logoKaleidoLab");
+        var timer = document.getElementById("timer_count");
 
         let context = this._canvasElement.getContext('2d');
-      /** */  let contextI = this._imagesElement.getContext('2d');
+        /** */  
+        let contextI = this._imagesElement.getContext('2d');
         
         if(this._facingMode == 'user'){
           context.translate(this._canvasElement.width, 0);
           context.scale(-1, 1);
-          context.width = "1080px";
-       /** */   contextI.translate(this._imagesElement.width, 0);
+          context.style.width = "1080px";
+         /** */   
+          contextI.translate(this._imagesElement.width, 0);
           contextI.scale(-1, 1);
+
+          timer.innerHTML = 3;
+
+        var countdown = window.setInterval(function() {
+            var seconds = timer.innerHTML;
+            seconds = seconds - 1;
+            timer.innerHTML = seconds;
+
+            if (seconds == 0) {
+                timer.innerHTML = "¡ Una sonrisa !";
+                
+                clearInterval(countdown);
+                }
+        }, 1000);
+
+        
         }
         context.clearRect(0, 0, this._canvasElement.width, this._canvasElement.height);
-       /**/ context.drawImage(this._webcamElement, 0, 0, this._canvasElement.width, this._canvasElement.height, this._imagesElement.width, this._imagesElement.height);
+        /**/ 
+        context.drawImage(this._webcamElement, 0, 0, this._canvasElement.width, this._canvasElement.height);
         
         
         let data = this._canvasElement.toDataURL('image/png');
