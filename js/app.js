@@ -62,6 +62,8 @@ function cameraStarted(){
     $("#wpfront-scroll-top-container").addClass("d-none");
     window.scrollTo(0, 0); 
     $('body').css('overflow-y','hidden');
+
+    webcam.drawCanva();
 }
 
 function cameraStopped(){
@@ -107,9 +109,10 @@ function afterTakePhoto(){
 
 function removeCapture(){
     $('#canvas').addClass('d-none');
-    $('#webcam-control').removeClass('d-none');
+   /*  $('#webcam-control').removeClass('d-none'); */
     $('#cameraControls').removeClass('d-none');
     $('#take-photo').removeClass('d-none');
+    $('#cameraFlip').removeClass('d-none');
     $('#exit-app').addClass('d-none');
     $('#download-photo').addClass('d-none');
     $('#resume-camera').addClass('d-none');

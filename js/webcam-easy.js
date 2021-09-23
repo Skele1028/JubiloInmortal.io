@@ -167,6 +167,35 @@ class Webcam {
       });   
     }
 
+    async drawCanva(){
+      const canvasMontaje = await html2canvas(imagesContainer, 
+        {backgroundColor: null})
+
+        var image = new Image();
+        image.id = "pic";
+        image.src = canvasMontaje.toDataURL("image/png", 1.0);
+
+
+        image.onload = function() {
+            context.translate(1280, 0);
+            context.scale(-1, 1);   
+            context.drawImage(video, 0,0, 1280, 720);
+            context.setTransform(1,0,0,1,0,0);
+            
+            context.drawImage(image, 0,0, 1280, 720);
+
+            var link = document.getElementById('link');
+            link.setAttribute('download', 'Foto.png');
+            link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+            link.click();
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            snap.removeAttribute("disabled");
+
+            
+        };
+    }
+
     snap() {
       if(this._canvasElement!=null){
         /* if(this._snapSoundElement!= null){
@@ -196,7 +225,7 @@ class Webcam {
           contextI.translate(this._imagesElement.width, 0);
           contextI.scale(-1, 1);
 
-          timer.innerHTML = 3;
+      /*     timer.innerHTML = 3;
 
         var countdown = window.setInterval(function() {
             var seconds = timer.innerHTML;
@@ -208,7 +237,7 @@ class Webcam {
                 
                 clearInterval(countdown);
                 }
-        }, 1000);
+        }, 1000); */
 
         
         }
