@@ -98,6 +98,7 @@ function afterTakePhoto(){
     webcam.stop();
     $('#canvas').removeClass('d-none');
     $('#take-photo').addClass('d-none');
+    $('#cameraFlip').addClass('d-none');
     $('#exit-app').removeClass('d-none');
     $('#download-photo').removeClass('d-none');
     $('#resume-camera').removeClass('d-none');
