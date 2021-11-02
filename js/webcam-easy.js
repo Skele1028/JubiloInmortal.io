@@ -223,24 +223,28 @@ class Webcam {
           context.style.width = "1080px";
          /** */   
           contextI.translate(this._imagesElement.width, 0);
-          contextI.scale(-1, 1);
-
-      /*     timer.innerHTML = 3;
-
-        var countdown = window.setInterval(function() {
-            var seconds = timer.innerHTML;
-            seconds = seconds - 1;
-            timer.innerHTML = seconds;
-
-            if (seconds == 0) {
-                timer.innerHTML = "¡ Una sonrisa !";
-                
-                clearInterval(countdown);
-                }
-        }, 1000); */
-
-        
+          contextI.scale(-1, 1);        
         }
+
+        const canvasMontaje = await html2canvas(imagesElement, 
+          {backgroundColor: null})
+
+        var image = new Image();
+        image.id = "pic";
+        image.src = canvasMontaje.toDataURL("image/png", 1.0);
+
+        image.onload = function() {
+          context.translate(1280, 0);
+          context.scale(-1, 1);   
+          context.drawImage(video, 0,0, 1280, 720);
+          context.setTransform(1,0,0,1,0,0);
+          
+          context.drawImage(image, 0, 0, 1280, 720);
+
+          var link = document.getElementById('link');
+          link.setAttribute('download', 'Foto.png');
+          link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+
         context.clearRect(0, 0, this._canvasElement.width, this._canvasElement.height);
         /**/ 
         context.drawImage(this._webcamElement, 0, 0, this._canvasElement.width, this._canvasElement.height);
@@ -248,7 +252,8 @@ class Webcam {
         
         let data = this._canvasElement.toDataURL('image/png');
         return data;
-      }
+      } 
+    }
       else{
         throw "canvas element is missing";
       }

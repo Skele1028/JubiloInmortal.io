@@ -80,6 +80,7 @@ function cameraStopped(){
 $("#take-photo").click(function () {
     beforeTakePhoto();
   
+    
     let picture = webcam.snap();
     
     document.querySelector('#download-photo').href = picture;
