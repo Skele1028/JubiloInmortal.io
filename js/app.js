@@ -1,14 +1,28 @@
 //Inicializacion del obj webCam
+'use strict';
+
 const webcamElement = document.getElementById('webcam');
 const canvasElement = document.getElementById('canvas');
 const imagesElement = document.getElementById('images-container');
 const montaje = document.getElementById("montaje");
 
-const webcam = new Webcam(webcamElement, 'user', canvasElement, imagesElement, montaje);
+
+const StartDiv = document.getElementById('webcam-control');
+const StartButton = document.getElementById('button-start-cam');
+const imagesContainer = document.getElementById("images-container");
+const snap = document.getElementById("snap");
 
 
+const webcam = new Webcam(webcamElement, 'user', canvasElement, imagesElement, montaje, StartDiv, StartButton, imagesContainer, snap);
 
-$("#webcam-switch").change(function () {
+window.addEventListener('scroll', () =>{
+    setSizeTo720p();
+}) 
+
+setSizeTo720p();
+
+
+$("#webcam-switch").change(function() {
     if(this.checked){
         $('.md-modal').addClass('md-show');
        
@@ -79,10 +93,7 @@ function cameraStopped(){
 
 $("#take-photo").click(function () {
     beforeTakePhoto();
-  
-    
     let picture = webcam.snap();
-    
     document.querySelector('#download-photo').href = picture;
     afterTakePhoto();
 });
