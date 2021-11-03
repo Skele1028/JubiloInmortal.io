@@ -15,13 +15,13 @@ const snap = document.getElementById("snap");
 
 const webcam = new Webcam(webcamElement, 'user', canvasElement, imagesElement, montaje, StartDiv, StartButton, imagesContainer, snap);
 
-window.addEventListener('scroll', () =>{
+/* window.addEventListener('scroll', () =>{
     setSizeTo720p();
 }) 
 
 setSizeTo720p();
 
-
+ */
 $("#webcam-switch").change(function() {
     if(this.checked){
         $('.md-modal').addClass('md-show');
